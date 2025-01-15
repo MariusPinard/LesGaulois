@@ -2,6 +2,7 @@ package test_fonctionnel;
 
 import personnages.Gaulois;
 import personnages.Romain;
+import personnages.Personnage;
 
 public class TestPersonnages {
 	public static void main(String[] args) {
@@ -9,7 +10,10 @@ public class TestPersonnages {
 		Romain minus = new Romain("Minus",6);
 		asterix.parler(" Bonjour à tous ");
 		minus.parler("UN GAU... UN GAUGAU...");
-		minus.recevoirCoup(3);
-		minus.recevoirCoup(3);
+		asterix.frapper(minus);
+		minus.frapper(asterix);
+		asterix.frapper(minus);
+		minus.frapper(asterix);
+		asterix.frapper(minus);
 	}
 }

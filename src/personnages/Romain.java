@@ -1,25 +1,22 @@
 package personnages;
 
-public class Romain {
+public class Romain extends Personnage {
 	private String nom;
 	private int force;
 	public Romain(String nom,int force) {
-		this.nom=nom;
-		this.force=force;
+		super(nom,force);
 	}
 	
-	public String getNom(){
+	/*public String getNom(){
 		return this.nom;
 	}
-	public static void main(String[] args) {
-		Romain minus = new Romain("Minus",6);
-		System.out.println(minus.getNom());
-	}
-	
+	*/
+	/*
 	public void parler(String texte) {
 		System.out.println("Le romain " + this.nom + ": «" + texte + "».");
 	}
-	
+	*/
+	/*
 	public void recevoirCoup(int force_coup) {
 		if (this.force<=force_coup) {
 			this.force=0;
@@ -28,5 +25,10 @@ public class Romain {
 			this.force-=force_coup;
 			this.parler(" Aïe ! ");
 		}
+	}
+	*/
+	
+	public void donnerAuteur() {
+		System.out.println("Le romain ");
 	}
 }
