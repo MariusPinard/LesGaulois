@@ -1,32 +1,28 @@
 package personnages;
 
-public class abstract Personnage {
-
-	private String nom;
-	private int force;
-	public Personnage(String nom,int force) {
-		this.nom=nom;
-		this.force=force;
-	}
+public abstract class Personnage {
 	
-	public String getNom(){
+	protected int force;
+	protected String nom;
+
+	public String getNom() {
 		return this.nom;
 	}
 	
 	public void parler(String texte) {
+		System.out.print("Le");
 		this.donnerAuteur();
-		System.out.println(this.nom + " : «" + texte + "».");
+		System.out.println(" : «" + texte + "».");
 	}
 	
-	protected void abstract donnerAuteur() {
-		this.donnerAuteur();
-	}
-	
+	protected abstract void donnerAuteur();
+
 	public void frapper(Personnage adversaire) {
+		System.out.print("Le");
 		this.donnerAuteur();
-		System.out.print(this.nom + " envoie un grand coup dans la mâchoire de ");
+		System.out.print(" envoie un grand coup dans la mâchoire du ");
 		adversaire.donnerAuteur();
-		System.out.println(adversaire.getNom());
+		System.out.println(".");
 		adversaire.recevoirCoup(this.force/3);
 	}
 	

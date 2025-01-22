@@ -1,10 +1,11 @@
 package personnages;
 
 public class Gaulois extends Personnage{
-	private String nom;
-	private int force;
+	
+	
 	public Gaulois(String nom,int force) {
-		super(nom,force);
+		this.force=force;
+		this.nom=nom;
 	}
 	
 	/*public String getNom(){
@@ -16,7 +17,7 @@ public class Gaulois extends Personnage{
 	}
 	*/
 	public void donnerAuteur () {
-		System.out.print("Le gaulois ");
+		System.out.print(" gaulois "+ this.getNom());
 	}
 	/*
 	public void frapper(Romain romain) {

@@ -1,10 +1,10 @@
 package personnages;
 
 public class Romain extends Personnage {
-	private String nom;
-	private int force;
+	
 	public Romain(String nom,int force) {
-		super(nom,force);
+		this.force=force;
+		this.nom=nom;
 	}
 	
 	/*public String getNom(){
@@ -29,6 +29,6 @@ public class Romain extends Personnage {
 	*/
 	
 	public void donnerAuteur() {
-		System.out.println("Le romain ");
+		System.out.print(" romain "+this.getNom());
 	}
 }

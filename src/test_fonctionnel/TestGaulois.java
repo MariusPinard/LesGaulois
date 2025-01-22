@@ -8,10 +8,10 @@ public class TestGaulois {
 		Gaulois asterix = new Gaulois("Astérix",8);
 		Romain minus = new Romain("Minus",6);
 		System.out.println(asterix);
+		System.out.println(asterix.getNom());
 		asterix.parler("Bonjour à tous");
 		asterix.frapper(minus);
 		asterix.frapper(minus);
 		asterix.frapper(minus);
 	}
-	
 }
