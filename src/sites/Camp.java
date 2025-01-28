@@ -8,9 +8,10 @@ public class Camp {
 	protected Soldat l_soldats[];
 	int nbSoldats;
 	
-	public Camp (Soldat commandant, Soldat l_soldats[], int nbSoldats) {
+	public Camp (Soldat commandant) {
 		this.commandant=commandant;
-		this.l_soldats[0]=commandant;
+		this.l_soldats = new Soldat[5];
+		l_soldats[0]=commandant;
 		this.nbSoldats=1;
 	}
 	
@@ -20,11 +21,29 @@ public class Camp {
 	
 	public void ajouterSoldat(Soldat soldat) {
 		if (this.nbSoldats==4) {
-			this.commandant.parler("Désolé" + soldat.getNom() + "notre camp est complet !");
+			this.commandant.parler("Dï¿½solï¿½ " + soldat.getNom() + " notre camp est complet !");
 		} else {
 			this.l_soldats[nbSoldats]=soldat;
 			this.nbSoldats+=1;
-			soldat.parler("Je mets mon épée au service de Rome dans le camp dirigé par" + this.commandant);
+			soldat.parler("Je mets mon ï¿½pï¿½e au service de Rome dans le camp dirigï¿½ par " + this.getCommandant().getNom());
+		}
+	}
+	
+	public void afficherCamp() {
+		System.out.println("Le village de " + this.getCommandant().getNom() + " contient les soldats :");
+		for (int i=0 ; i < this.nbSoldats ; i++) {
+			if (this.l_soldats[i]!=this.getCommandant()) {
+				System.out.println("- " + this.l_soldats[i].getNom());
+			}
+		}
+	}
+	
+	public void changerCommandant (Soldat nouveauCommandant) {
+		if (nouveauCommandant.getGrade()=="CENTURION") {
+			nouveauCommandant.parler("Â« Moi" + nouveauCommandant.getNom() + "je prends la direction du camp romain. Â».");
+			this.commandant=nouveauCommandant;
+		} else {
+			nouveauCommandant.parler("Â« Je ne suis pas suffisamment gradÃ© pour prendre la direction du camp romain. Â».");
 		}
 	}
 }

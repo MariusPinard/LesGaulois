@@ -1,18 +1,19 @@
 package sites;
 
 import personnages.Gaulois;
+import personnages.Soldat;
 
 public class Village {
 	
 	protected Gaulois chef;
-	protected Gaulois villageois[];
+	protected Gaulois [] villageois;
 	int nbGaulois;
 	
 	public Village (Gaulois chef) {
 		this.chef=chef;
-		this.villageois[0]=chef;
+		this.villageois = new Gaulois[5];
+		villageois[0]=chef;
 		this.nbGaulois=1;
-		
 	}
 	
 	public Gaulois getChef() {
@@ -21,11 +22,27 @@ public class Village {
 	
 	public void ajouterVillageois(Gaulois gaulois) {
 		if (this.nbGaulois==5) {
-			this.chef.parler("Désolé" + gaulois.getNom() + "mon village est déjà bien rempli.");
+			this.chef.parler("Dï¿½solï¿½ " + gaulois.getNom() + " mon village est dï¿½jï¿½ bien rempli.");
 		} else {
-			this.villageois[nbGaulois]=gaulois;
+			villageois[nbGaulois]=gaulois;
 			this.nbGaulois+=1;
-			this.chef.parler("Bienvenue"+ gaulois.getNom()+"!");
+			this.chef.parler("Bienvenue "+ gaulois.getNom()+"!");
 		}
+	}
+	
+	public void afficherVillageois() {
+		System.out.println("Le village de " + this.getChef().getNom() + " est habitÃ© par :");
+		for (int i=0 ; i < this.nbGaulois ; i++) {
+			if (this.villageois[i]!=this.getChef()) {
+				System.out.println("- " + this.villageois[i].getNom());
+			}
+		}
+	}
+	
+	public void changerCommandant (Gaulois nouveauChef) {
+		this.getChef().parler("Â« Je laisse mon grand bouclier au grand " + nouveauChef.getNom() + "Â».");
+		nouveauChef.parler("Â« Merci ! Â».");
+		this.chef=nouveauChef;
+		
 	}
 }

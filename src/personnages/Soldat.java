@@ -7,6 +7,10 @@ public class Soldat extends Romain{
 	public Soldat(String nom, int force, String grade) {
 		super(nom, force);
 		this.grade=grade;
-	}	
+	}
+	
+	public String getGrade() {
+		return this.grade;
+	}
 	
 }
