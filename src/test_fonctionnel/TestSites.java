@@ -17,7 +17,7 @@ public class TestSites {
 		
 		Gaulois agecanonix = new Gaulois("Agecanonix",1);
 		Gaulois assurancetourix = new Gaulois("Assurancetourix",2);
-		Gaulois asterix = new Gaulois("Astï¿½rix",5);
+		Gaulois asterix = new Gaulois("Astérix",5);
 		Gaulois obelix = new Gaulois("Obelix",15);
 		Gaulois prolix = new Gaulois("Prolix",2);
 		
