@@ -13,7 +13,7 @@ public abstract class Personnage {
 	public void parler(String texte) {
 		System.out.print("Le");
 		this.donnerAuteur();
-		System.out.println(" : «" + texte + "».");
+		System.out.println(" : ï¿½" + texte + "ï¿½.");
 	}
 	
 	protected abstract void donnerAuteur();
@@ -24,28 +24,25 @@ public abstract class Personnage {
 			System.out.println(this.force);
 			System.out.println();
 
-			int forceCoup=this.force*this.boost/3;
+			int forceCoup=this.force/3;
 			System.out.print("Le");
 			this.donnerAuteur();
 			System.out.print(" envoie un grand coup de force " + forceCoup);
 			adversaire.donnerAuteur();
 			System.out.println(".");
 			adversaire.recevoirCoup(forceCoup);
-			if (this.boost!=1) {
-				this.boost-=0.5;
-			}
 		} else {
-			System.out.println(adversaire.getNom() + " a abandonné");
+			System.out.println(adversaire.getNom() + " a abandonnï¿½");
 		}
 	}
 	
 	public void recevoirCoup(int forceCoup) {
 		if (this.force<=forceCoup) {
 			this.force=0;
-			this.parler(" J’abandonne… ");
+			this.parler(" Jï¿½abandonneï¿½ ");
 		} else {
 			this.force-=forceCoup;
-			this.parler(" Aïe ! ");
+			this.parler(" Aï¿½e ! ");
 		}
 	}
 }

@@ -9,7 +9,7 @@ public class TestGaulois {
 		
 		Gaulois agecanonix = new Gaulois("Agecanonix",1);
 		Gaulois assurancetourix = new Gaulois("Assurancetourix",2);
-		Gaulois asterix = new Gaulois("Astérix",5);
+		Gaulois asterix = new Gaulois("Astï¿½rix",5);
 		Gaulois obelix = new Gaulois("Obelix",15);
 		Gaulois prolix = new Gaulois("Prolix",2);
 		Gaulois abraracourcix = new Gaulois("Abraracourcix",5);
@@ -27,7 +27,7 @@ public class TestGaulois {
 		
 		Romain minus = new Romain("Minus",6);
 
-		asterix.parler(" Bonjour à tous ");
+		asterix.parler(" Bonjour ï¿½ tous ");
 		minus.parler("UN GAU... UN GAUGAU...");
 		asterix.frapper(minus);
 		minus.frapper(asterix);
