@@ -19,18 +19,20 @@ public class Druide extends Gaulois {
 	
 	public void concocterPotion (int nbDose) {
 		nbPotion=nbDose;
-		forcePotion=random.nextInt(6)+2;
-		this.parler(" « J'ai concocté" + nbDose + "doses de potion magique. Elle a une force de" + this.random + ". ». ");
+		forcePotion=random.nextInt(4)+2;
+		this.parler(" ï¿½ J'ai concoctï¿½" + nbDose + "doses de potion magique. Elle a une force de " + forcePotion + ". ï¿½. ");
 	}
 	
 	public void donnerPotion (Gaulois gaulois) {
-		if (gaulois.getNom()=="obelix") {
-			System.out.println(" « Non, Obélix Non !... Et tu le sais très bien ! »");
+		if (gaulois.getNom()=="Obelix") {
+			this.parler(" ï¿½ Non, Obï¿½lix Non !... Et tu le sais trï¿½s bien ! ï¿½");
 		} else if (nbPotion==0) {
-			this.parler(" « Désolé " + gaulois.getNom() + " il n'y a plus une seule goutte de potion. »");
+			this.parler(" ï¿½ Dï¿½solï¿½ " + gaulois.getNom() + " il n'y a plus une seule goutte de potion. ï¿½");
 		} else {
 			gaulois.boostGaulois(forcePotion);
-			this.parler(" « Tiens " + gaulois.getNom() + " un peu de potion magique. »");
+			//System.out.println(gaulois.getBoost());
+			this.parler(" ï¿½ Tiens " + gaulois.getNom() + " un peu de potion magique. ï¿½");
+			nbPotion-=1;
 		}
 	}
 	

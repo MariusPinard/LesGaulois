@@ -13,17 +13,17 @@ public class Romain extends Personnage {
 	*/
 	/*
 	public void parler(String texte) {
-		System.out.println("Le romain " + this.nom + ": «" + texte + "».");
+		System.out.println("Le romain " + this.nom + ": ï¿½" + texte + "ï¿½.");
 	}
 	*/
 	/*
 	public void recevoirCoup(int force_coup) {
 		if (this.force<=force_coup) {
 			this.force=0;
-			this.parler(" J’abandonne… ");
+			this.parler(" Jï¿½abandonneï¿½ ");
 		} else {
 			this.force-=force_coup;
-			this.parler(" Aïe ! ");
+			this.parler(" Aï¿½e ! ");
 		}
 	}
 	*/
@@ -31,4 +31,6 @@ public class Romain extends Personnage {
 	public void donnerAuteur() {
 		System.out.print(" romain "+this.getNom());
 	}
+	
+	
 }

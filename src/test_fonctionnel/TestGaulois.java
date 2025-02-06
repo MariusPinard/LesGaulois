@@ -1,8 +1,9 @@
 package test_fonctionnel;
 
-import personnages.Gaulois;
 import personnages.Druide;
+import personnages.Gaulois;
 import personnages.Romain;
+import personnages.Soldat;
 
 public class TestGaulois {
 	public static void main(String[] args) {
@@ -16,6 +17,13 @@ public class TestGaulois {
 
 		Druide panoramix = new Druide("Panoramix",8);
 		
+		Soldat minus = new Soldat("Minus",6,"soldat");
+		minus.equiper("bouclier");
+		minus.equiper("casque");
+		minus.equiper("plastron");
+		
+		
+		
 		panoramix.concocterPotion(3);
 		panoramix.donnerPotion(asterix);
 		System.out.println(asterix.getBoost());
@@ -23,9 +31,9 @@ public class TestGaulois {
 		panoramix.donnerPotion(obelix);
 		panoramix.donnerPotion(assurancetourix);
 		panoramix.donnerPotion(abraracourcix);
-
+		panoramix.donnerPotion(agecanonix);
 		
-		Romain minus = new Romain("Minus",6);
+		
 
 		asterix.parler(" Bonjour � tous ");
 		minus.parler("UN GAU... UN GAUGAU...");

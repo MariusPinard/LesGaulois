@@ -20,19 +20,26 @@ public abstract class Personnage {
 	
 
 	public void frapper(Personnage adversaire) {
-		if (adversaire.force>0) {
-			System.out.println(this.force);
+		if (adversaire.aTerre()) {
+			System.out.println(adversaire.getNom() + " a abandonn�");
+		} else if (this.aTerre()) {
+			System.out.println(this.getNom() + " a abandonn�");
+		}
+			else {
+			
+			//System.out.println(this.force);
+			int forceCoup = this.force;
 			System.out.println();
-
-			int forceCoup=this.force/3;
+			
 			System.out.print("Le");
 			this.donnerAuteur();
 			System.out.print(" envoie un grand coup de force " + forceCoup);
 			adversaire.donnerAuteur();
 			System.out.println(".");
 			adversaire.recevoirCoup(forceCoup);
-		} else {
-			System.out.println(adversaire.getNom() + " a abandonn�");
+			if (this.boost!=1) {
+				this.boost-=0.5;
+			}
 		}
 	}
 	
@@ -44,5 +51,9 @@ public abstract class Personnage {
 			this.force-=forceCoup;
 			this.parler(" A�e ! ");
 		}
+	}
+	
+	public boolean aTerre() {
+		return this.force<=0;
 	}
 }
